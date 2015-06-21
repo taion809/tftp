@@ -17,7 +17,7 @@ func handleData(request *Request) error {
 		return err
 	}
 
-	if request.size-6 < 512 {
+	if request.size-4 < 512 {
 		rm.Lock()
 		delete(fd, request.addr.Port)
 		rm.Unlock()
